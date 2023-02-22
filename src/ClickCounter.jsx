@@ -11,6 +11,14 @@ export function ClickCounter({ initialValue = 0}) {
          console.log(`The current value of the counter is ${counter}`)
     },[counter])
 
+    useEffect(() => {
+        console.log("The component is render")
+
+        return() => {
+            console.log("The component is unmount")
+        }
+    },[])
+
     return (
         <div>
             <h1>Count: {counter}</h1>
